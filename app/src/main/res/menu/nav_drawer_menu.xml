@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/WeatherFragment"
+            android:icon="@drawable/weather_icon"
+            android:title="@string/Weather" />
+        <item
+            android:id="@+id/LocationFragment"
+            android:icon="@drawable/location_icon"
+            android:title="@string/Location" />
+        <item
+            android:id="@+id/ThemeFragment"
+            android:icon="@drawable/theme_icon"
+            android:title="@string/Theme" />
+        <item
+            android:id="@+id/LanguageFragment"
+            android:icon="@drawable/language_icon"
+            android:title="@string/Language" />
+    </group>
+</menu>

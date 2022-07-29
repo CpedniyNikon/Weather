@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundColor">
+
+    <ImageView
+        android:id="@+id/themePng"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/theme_vector" />
+
+    <TextView
+        android:id="@+id/chooseThemeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chooseTheme"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/themePng"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_regular"
+        android:layout_marginTop="10dp"
+        android:textSize="24sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/light_theme_button"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/chooseThemeImageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/light_theme_icon" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dark_theme_button"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/chooseThemeImageView"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/dark_theme_icon" />
+
+    <TextView
+        android:id="@+id/lightThemeImageView"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/light_theme_button"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:fontFamily="@font/sf_pro_regular"
+        android:text="@string/LightTheme"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/darkThemeImageView"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/DarkTheme"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:layout_below="@id/dark_theme_button"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sf_pro_regular"
+        android:textSize="24sp" />
+</RelativeLayout>
