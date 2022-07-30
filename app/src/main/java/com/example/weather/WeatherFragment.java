@@ -45,11 +45,17 @@ public class WeatherFragment extends Fragment {
                 JSONObject object = new JSONObject(Objects.requireNonNull(response));
                 JSONObject jsonObject = object.getJSONObject("main");
                 int temp = jsonObject.getInt("temp");
+                GlobalConstants.temperature = temp;
                 Toast.makeText(getActivity(), "Температура: " + String.valueOf(temp - 273 + 1) + " по Цельсию", Toast.LENGTH_SHORT).show();
                 textView.setText(String.valueOf(temp-273+1));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         });
+
+        if(GlobalConstants.temperature != 0) {
+            textView.setText(String.valueOf(GlobalConstants.temperature-273+1));
+        }
+
     }
 }
