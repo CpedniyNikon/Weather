@@ -11,4 +11,5 @@
     <color name="editTextColor">#909090</color>
     <color name="textViewColor">#017DF1</color>
     <color name="navigationView_color">#040404</color>
+    <color name="gray">#7C7C7C</color>
 </resources>

@@ -15,4 +15,13 @@
     <string name="chooseTheme">Choose theme</string>
     <string name="LightTheme">Light</string>
     <string name="DarkTheme">Dark</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="pressure">Pressure</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="Null">-</string>
+    <string name="km_h">km/h</string>
+    <string name="mbar">mbar</string>
+    <string name="percent">%</string>
+    <string name="humidity">Humidity</string>
 </resources>
