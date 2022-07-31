@@ -34,12 +34,15 @@ public class LanguageFragment extends Fragment {
         uaTextView = (TextView) getActivity().findViewById(R.id.ukrainian_language);
         enTextView.setOnClickListener(v-> {
             setLocal(getActivity(), "en");
+            ((MainActivity)getActivity()).getSupportActionBar().setTitle(R.string.english_language);
         });
         ruTextView.setOnClickListener(v-> {
             setLocal(getActivity(), "ru");
+            ((MainActivity)getActivity()).getSupportActionBar().setTitle(R.string.russian_language);
         });
         uaTextView.setOnClickListener(v-> {
             setLocal(getActivity(), "ua");
+            ((MainActivity)getActivity()).getSupportActionBar().setTitle(R.string.ukrainian_language);
         });
         super.onViewCreated(view, savedInstanceState);
     }
