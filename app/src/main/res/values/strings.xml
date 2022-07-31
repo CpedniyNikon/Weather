@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Weather</string>
-    <string name="city">Введите свой город</string>
-    <string name="showTemp">Показать температуру</string>
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="change">Change</string>
@@ -11,7 +9,7 @@
     <string name="Language">Language</string>
     <string name="refresh">Refresh</string>
     <string name="enterYourLocation">Enter new location</string>
-    <string name="getYourLocation">Get yout location automatically</string>
+    <string name="getYourLocation">Get your location automatically</string>
     <string name="chooseTheme">Choose theme</string>
     <string name="LightTheme">Light</string>
     <string name="DarkTheme">Dark</string>
@@ -20,8 +18,12 @@
     <string name="sunrise">Sunrise</string>
     <string name="sunset">Sunset</string>
     <string name="Null">-</string>
-    <string name="km_h">km/h</string>
+    <string name="m_s">m/s</string>
     <string name="mbar">mbar</string>
     <string name="percent">%</string>
     <string name="humidity">Humidity</string>
+    <string name="celsius">°</string>
+    <string name="english_language">English</string>
+    <string name="russian_language">Русский</string>
+    <string name="ukrainian_language">Український</string>
 </resources>

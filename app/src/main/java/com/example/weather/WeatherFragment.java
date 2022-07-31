@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,6 +27,7 @@ public class WeatherFragment extends Fragment {
     private TextView speedTextView = null;
     private TextView pressureTextView = null;
     private TextView humidityTextView = null;
+    private TextView descriptionTextView = null;
 
     @Nullable
     @Override
@@ -35,12 +37,12 @@ public class WeatherFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        Log.d("WTF","SHITASFUCK");
         button = (Button) getActivity().findViewById(R.id.updateWeatherButton);
         tempTextView = (TextView) getActivity().findViewById(R.id.temperature);
         speedTextView = (TextView) getActivity().findViewById(R.id.wind_speed_value);
         pressureTextView = (TextView) getActivity().findViewById(R.id.pressure_value);
         humidityTextView = (TextView) getActivity().findViewById(R.id.humidity_value);
+        descriptionTextView = (TextView) getActivity().findViewById(R.id.weather);
         button.setOnClickListener(v -> {
             String response = null;
             try {
@@ -72,6 +74,13 @@ public class WeatherFragment extends Fragment {
                 int humidity = humidityObject.getInt("humidity");
                 GlobalConstants.humidity = humidity;
                 humidityTextView.setText(String.valueOf(humidity));
+
+                JSONArray weatherArray = object.getJSONArray("weather");
+                JSONObject weatherObject = weatherArray.getJSONObject(0);
+                String description = weatherObject.getString("main");
+                Log.d("WTF", description);
+                GlobalConstants.description = description;
+                descriptionTextView.setText(description);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -89,6 +98,11 @@ public class WeatherFragment extends Fragment {
         if (GlobalConstants.humidity != -1) {
             humidityTextView.setText(String.valueOf(GlobalConstants.humidity));
         }
+        if (!GlobalConstants.description.equals("null")) {
+            descriptionTextView.setText(GlobalConstants.description);
+        }
+
+        super.onViewCreated(view, savedInstanceState);
     }
 }
 

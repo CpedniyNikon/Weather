@@ -30,20 +30,6 @@
         android:textSize="80sp" />
 
     <TextView
-        android:id="@+id/weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/celsius"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-30dp"
-        android:fontFamily="@font/sf_pro_regular"
-        android:gravity="center"
-        android:text="@string/Null"
-        android:textColor="@color/gray"
-        android:textSize="30sp" />
-
-
-    <TextView
         android:id="@+id/celsius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,9 +38,24 @@
         android:fontFamily="@font/sf_pro_regular"
         android:layout_toEndOf="@id/temperature"
         android:gravity="center"
-        android:text="°"
+        android:text="@string/celsius"
         android:textColor="@color/white"
         android:textSize="80sp" />
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/celsius"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-10dp"
+        android:fontFamily="@font/sf_pro_regular"
+        android:gravity="center"
+        android:text="@string/Null"
+        android:textColor="@color/gray"
+        android:textSize="30sp" />
+
+
 
     <ImageView
         android:id="@+id/sunrise_logo"
@@ -140,7 +141,7 @@
         android:layout_marginTop="100dp"
         android:layout_toEndOf="@id/wind_speed_value"
         android:fontFamily="@font/sf_pro_regular"
-        android:text="@string/km_h"
+        android:text="@string/m_s"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
@@ -184,7 +185,7 @@
 
     <TextView
         android:id="@+id/mbar"
-        android:layout_width="40sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/vector_1"
         android:layout_marginStart="-95dp"

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Погода</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="change">Изменить</string>
+    <string name="Weather">Погода</string>
+    <string name="Location">Местоположение</string>
+    <string name="Theme">Тема</string>
+    <string name="Language">Язык</string>
+    <string name="refresh">Обновить</string>
+    <string name="enterYourLocation">Введите новый город</string>
+    <string name="getYourLocation">Определить ваше местоположение</string>
+    <string name="chooseTheme">Выбор темы</string>
+    <string name="LightTheme">Светлая</string>
+    <string name="DarkTheme">Темная</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="pressure">Давление</string>
+    <string name="sunrise">Восход</string>
+    <string name="sunset">Закат</string>
+    <string name="Null">-</string>
+    <string name="m_s">м/с</string>
+    <string name="mbar">мбар</string>
+    <string name="percent">%</string>
+    <string name="humidity">Влажность</string>
+    <string name="celsius">°</string>
+    <string name="english_language">English</string>
+    <string name="russian_language">Русский</string>
+    <string name="ukrainian_language">Український</string>
+</resources>

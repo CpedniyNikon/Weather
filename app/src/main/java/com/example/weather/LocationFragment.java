@@ -18,21 +18,23 @@ import androidx.fragment.app.Fragment;
 public class LocationFragment extends Fragment {
     private Button button = null;
     private EditText editText = null;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.location_fragment,container,false);
+        return inflater.inflate(R.layout.location_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         button = (Button) getActivity().findViewById(R.id.updateCityButton);
         editText = (EditText) getActivity().findViewById(R.id.locationEditText);
-        button.setOnClickListener(v->{
+        button.setOnClickListener(v -> {
             GlobalConstants.city = editText.getText().toString();
-            ((MainActivity)getActivity()).getSupportActionBar().setTitle(GlobalConstants.city);
+            ((MainActivity) getActivity()).getSupportActionBar().setTitle(GlobalConstants.city);
             Log.d("WTF", GlobalConstants.city);
 
         });
+        super.onViewCreated(view, savedInstanceState);
     }
 }
