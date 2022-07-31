@@ -35,6 +35,7 @@ public class WeatherFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Log.d("WTF","SHITASFUCK");
         button = (Button) getActivity().findViewById(R.id.updateWeatherButton);
         tempTextView = (TextView) getActivity().findViewById(R.id.temperature);
         speedTextView = (TextView) getActivity().findViewById(R.id.wind_speed_value);
@@ -57,8 +58,6 @@ public class WeatherFragment extends Fragment {
                 GlobalConstants.temperature = temp;
                 tempTextView.setText(String.valueOf(temp - 273 + 1));
 
-                Toast.makeText(getActivity(), "Температура: " + String.valueOf(temp - 273 + 1) + " по Цельсию", Toast.LENGTH_SHORT).show();
-
                 JSONObject speedObject = object.getJSONObject("wind");
                 int speed = speedObject.getInt("speed");
                 GlobalConstants.speed = speed;
@@ -73,8 +72,6 @@ public class WeatherFragment extends Fragment {
                 int humidity = humidityObject.getInt("humidity");
                 GlobalConstants.humidity = humidity;
                 humidityTextView.setText(String.valueOf(humidity));
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -83,14 +80,14 @@ public class WeatherFragment extends Fragment {
         if (GlobalConstants.temperature != 0) {
             tempTextView.setText(String.valueOf(GlobalConstants.temperature - 273 + 1));
         }
-        if (GlobalConstants.speed != 0) {
-            tempTextView.setText(String.valueOf(GlobalConstants.speed));
+        if (GlobalConstants.speed != -1) {
+            speedTextView.setText(String.valueOf(GlobalConstants.speed));
         }
         if (GlobalConstants.pressure != 0) {
-            tempTextView.setText(String.valueOf(GlobalConstants.pressure));
+            pressureTextView.setText(String.valueOf(GlobalConstants.pressure));
         }
-        if (GlobalConstants.humidity != 0) {
-            tempTextView.setText(String.valueOf(GlobalConstants.humidity));
+        if (GlobalConstants.humidity != -1) {
+            humidityTextView.setText(String.valueOf(GlobalConstants.humidity));
         }
     }
 }

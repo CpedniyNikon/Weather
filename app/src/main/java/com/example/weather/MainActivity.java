@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.actionbar_logo);
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new WeatherFragment()).commit();
             navigationView.setCheckedItem(R.id.WeatherFragment);
@@ -78,20 +78,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.WeatherFragment:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WeatherFragment()).commit();
+                if (!navigationView.getMenu().findItem(R.id.WeatherFragment).isChecked()) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new WeatherFragment()).commit();
+                }
                 break;
             case R.id.LocationFragment:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new LocationFragment()).commit();
+                if (!navigationView.getMenu().findItem(R.id.LocationFragment).isChecked()) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new LocationFragment()).commit();
+                }
                 break;
             case R.id.ThemeFragment:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ThemeFragment()).commit();
+                if (!navigationView.getMenu().findItem(R.id.ThemeFragment).isChecked()) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new ThemeFragment()).commit();
+                }
                 break;
             case R.id.LanguageFragment:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new LanguageFragment()).commit();
+                if (!navigationView.getMenu().findItem(R.id.LanguageFragment).isChecked()) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new LanguageFragment()).commit();
+                }
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
