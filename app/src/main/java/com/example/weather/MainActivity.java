@@ -23,7 +23,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ActionBarDrawerToggle actionBarDrawerToggle = null;
     private DrawerLayout drawerLayout = null;
-    private NavigationView navigationView = null;
+    static public NavigationView navigationView = null;
 
     private TextView textView = null;
     private EditText editText = null;

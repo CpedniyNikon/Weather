@@ -56,31 +56,42 @@
         android:textSize="30sp" />
 
 
-
     <ImageView
         android:id="@+id/sunrise_logo"
         android:layout_width="25dp"
         android:layout_height="22dp"
-        android:scaleType="fitXY"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/temperature"
-        android:layout_marginTop="30dp"
+        android:layout_alignParentStart="true"
         android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
         app:srcCompat="@drawable/sunrise_logo" />
 
     <TextView
         android:id="@+id/sunrise_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sunrise"
-        android:fontFamily="@font/sf_pro_regular"
-        android:textColor="@color/white"
-        android:layout_toEndOf="@id/sunrise_logo"
         android:layout_alignBottom="@id/sunrise_logo"
         android:layout_marginStart="5dp"
         android:layout_marginBottom="-2dp"
-        android:textSize="14sp" />
+        android:layout_toEndOf="@id/sunrise_logo"
+        android:fontFamily="@font/sf_pro_regular"
+        android:text="@string/sunrise"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
 
+    <TextView
+        android:id="@+id/sunrise_time"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sunrise_logo"
+        android:layout_alignStart="@id/sunrise_logo"
+        android:gravity="center"
+        android:text="@string/Null"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:textSize="14dp"
+        />
 
     <ImageView
         android:id="@+id/sunset_logo"
@@ -104,7 +115,20 @@
         android:layout_alignBottom="@id/sunset_logo"
         android:layout_marginStart="-115dp"
         android:layout_marginBottom="-2dp"
-        android:textSize="14sp" />
+        android:textSize="14dp" />
+
+
+    <TextView
+        android:id="@+id/sunset_time"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sunset_logo"
+        android:layout_alignStart="@id/sunset_logo"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/Null"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
 
     <TextView
         android:id="@+id/wind_speed_text_view"

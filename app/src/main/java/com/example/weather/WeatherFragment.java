@@ -1,6 +1,7 @@
 package com.example.weather;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -18,7 +19,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.Objects;
+import java.util.TimeZone;
 import java.util.concurrent.ExecutionException;
 
 public class WeatherFragment extends Fragment {
@@ -28,6 +34,8 @@ public class WeatherFragment extends Fragment {
     private TextView pressureTextView = null;
     private TextView humidityTextView = null;
     private TextView descriptionTextView = null;
+    private TextView sunriseTime = null;
+    private TextView sunsetTime = null;
 
     @Nullable
     @Override
@@ -43,6 +51,8 @@ public class WeatherFragment extends Fragment {
         pressureTextView = (TextView) getActivity().findViewById(R.id.pressure_value);
         humidityTextView = (TextView) getActivity().findViewById(R.id.humidity_value);
         descriptionTextView = (TextView) getActivity().findViewById(R.id.weather);
+        sunriseTime = (TextView) getActivity().findViewById(R.id.sunrise_time);
+        sunsetTime = (TextView) getActivity().findViewById(R.id.sunset_time);
         button.setOnClickListener(v -> {
             String response = null;
             try {
@@ -78,9 +88,18 @@ public class WeatherFragment extends Fragment {
                 JSONArray weatherArray = object.getJSONArray("weather");
                 JSONObject weatherObject = weatherArray.getJSONObject(0);
                 String description = weatherObject.getString("main");
-                Log.d("WTF", description);
                 GlobalConstants.description = description;
                 descriptionTextView.setText(description);
+
+                JSONObject timeObject = object.getJSONObject("sys");
+                int unixSunriseTime = timeObject.getInt("sunrise");
+                int unixSunsetTime = timeObject.getInt("sunset");
+
+                int timezone = object.getInt("timezone");
+                timezone /= 3600;
+
+                sunriseTime.setText(getTime(unixSunriseTime, timezone));
+                sunsetTime.setText(getTime(unixSunsetTime, timezone));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -103,6 +122,25 @@ public class WeatherFragment extends Fragment {
         }
 
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    private String getTime(int unitTime, int timezone) {
+
+        Date sunriseDate = new java.util.Date((long) unitTime * 1000);
+        SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+
+        String sunriseTime = sdf.format(sunriseDate);
+
+        String[] sunriseStrings = sunriseTime.split(" ");
+
+        String[] sunriseTimeStrings = sunriseStrings[1].split(":");
+        int hours = Integer.parseInt(sunriseTimeStrings[0]);
+        hours += timezone;
+        hours %= 24;
+        sunriseTimeStrings[0] = String.valueOf(hours);
+        if (sunriseTimeStrings[0].length() == 1)
+            sunriseTimeStrings[0] = "0" + sunriseTimeStrings[0];
+        return sunriseTimeStrings[0] + ":" + sunriseTimeStrings[1];
     }
 }
 
