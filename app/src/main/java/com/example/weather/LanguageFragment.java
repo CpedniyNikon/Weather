@@ -17,8 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Locale;
 
-import kotlin.jvm.internal.Ref;
-
 public class LanguageFragment extends Fragment {
     private TextView enTextView = null;
     private TextView ruTextView = null;

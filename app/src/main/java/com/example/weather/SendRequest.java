@@ -40,4 +40,3 @@ public class SendRequest extends AsyncTask<String, Void, String> {
         return stringBuilder.toString();
     }
 }
-
