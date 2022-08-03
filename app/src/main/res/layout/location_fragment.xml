@@ -30,9 +30,11 @@
         android:fontFamily="@font/sf_pro_regular"
         android:hint="@string/enterYourLocation"
         android:paddingStart="10dp"
-        android:textColorHint="@color/editTextColor"
         android:textColor="@color/editTextColor"
-        tools:ignore="RtlSymmetry"></EditText>
+        android:textColorHint="@color/editTextColor"
+        tools:ignore="RtlSymmetry"
+        android:inputType="text"
+        />
 
     <TextView
         android:id="@+id/locationTextView"

@@ -31,10 +31,9 @@ public class LocationFragment extends Fragment {
         editText = (EditText) getActivity().findViewById(R.id.locationEditText);
         button.setOnClickListener(v -> {
             GlobalConstants.city = editText.getText().toString();
-            ((MainActivity) getActivity()).getSupportActionBar().setTitle(GlobalConstants.city);
             Log.d("WTF", GlobalConstants.city);
-
         });
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Location);
         super.onViewCreated(view, savedInstanceState);
     }
 }

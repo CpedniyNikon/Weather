@@ -47,7 +47,7 @@ public class LanguageFragment extends Fragment {
         enTextView.setOnClickListener(v -> {
             if (!Locale.getDefault().getLanguage().equals("en")) {
                 setLocal(getActivity(), "en");
-                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Weather);
+                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.english_language);
                 enTextView.setTextColor(Color.parseColor("#017DF1"));
                 ruTextView.setTextColor(Color.parseColor("#FFFFFF"));
                 uaTextView.setTextColor(Color.parseColor("#FFFFFF"));
@@ -60,7 +60,7 @@ public class LanguageFragment extends Fragment {
         ruTextView.setOnClickListener(v -> {
             if (!Locale.getDefault().getLanguage().equals("ru")) {
                 setLocal(getActivity(), "ru");
-                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Weather);
+                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.russian_language);
                 enTextView.setTextColor(Color.parseColor("#FFFFFF"));
                 ruTextView.setTextColor(Color.parseColor("#017DF1"));
                 uaTextView.setTextColor(Color.parseColor("#FFFFFF"));
@@ -73,7 +73,7 @@ public class LanguageFragment extends Fragment {
         uaTextView.setOnClickListener(v -> {
             if (!Locale.getDefault().getLanguage().equals("ua")) {
                 setLocal(getActivity(), "ua");
-                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Weather);
+                ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.ukrainian_language);
                 enTextView.setTextColor(Color.parseColor("#FFFFFF"));
                 ruTextView.setTextColor(Color.parseColor("#FFFFFF"));
                 uaTextView.setTextColor(Color.parseColor("#017DF1"));
@@ -83,6 +83,8 @@ public class LanguageFragment extends Fragment {
                 MainActivity.navigationView.getMenu().getItem(3).setTitle("Мова");
             }
         });
+
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Language);
         super.onViewCreated(view, savedInstanceState);
     }
 
