@@ -25,10 +25,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout = null;
     static public NavigationView navigationView = null;
 
-    private TextView textView = null;
-    private EditText editText = null;
-    private AppCompatButton appCompatButton = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.actionbar_logo);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new WeatherFragment()).commit();
-            navigationView.setCheckedItem(R.id.WeatherFragment);
+                    new LocationFragment()).commit();
+            navigationView.setCheckedItem(R.id.LocationFragment);
         }
     }
 

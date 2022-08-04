@@ -1,6 +1,7 @@
 package com.example.weather;
 
 
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,9 @@ public class LocationFragment extends Fragment {
         button.setOnClickListener(v -> {
             GlobalConstants.city = editText.getText().toString();
             Log.d("WTF", GlobalConstants.city);
+            getParentFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new WeatherFragment()).commit();
+            MainActivity.navigationView.setCheckedItem(R.id.WeatherFragment);
         });
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(R.string.Location);
         super.onViewCreated(view, savedInstanceState);
